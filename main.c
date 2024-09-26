@@ -3,54 +3,59 @@
 
 int main(int argc, char const *argv[])
 {
-	double var1;
-	double var2;
+	int nombre1;
+	int nombre2;
 	double resultat;
-	char choix;
+	char operateur;
 	printf("Bonjour, choisissez un opérateur parmi: +, -, *, /, %%.\n");
-	scanf("%c", &choix);
+	scanf("%c", &operateur);
 	printf("Choisissez maintenant un premier nombre\n");
-	scanf("%.2f", &var1);
+	scanf("%d", &nombre1);
 	printf("Choisissez un second nombre.\n");
-	scanf("%.2f", &var2);
-	if (choix == '+')
+	scanf("%d", &nombre2);
+	if (operateur == '+')
 	{
 		printf("Addition\n");
-		resultat = var1 + var2;
+		resultat = nombre1 + nombre2;
+		printf("%d %c %d = %.2f \n", nombre1, operateur, nombre2, resultat);
 	}
-	else if (choix == '-')
+	else if (operateur == '-')
 	{
 		printf("Soustraction\n");
-		resultat = var1 - var2;
+		resultat = nombre1 - nombre2;
+		printf("%d %c %d = %.2f\n", nombre1, operateur, nombre2, resultat);
 	}
-	else if (choix == '*')
+	else if (operateur == '*')
 	{
 		printf("Multiplication\n");
-		resultat = var1 * var2;
+		resultat = nombre1 * nombre2;
+		printf("%d %c %d = %.2f\n", nombre1, operateur, nombre2, resultat);
 	}
-	else if (choix == '/')
+	else if (operateur == '/')
 	{
 		printf("Division\n");
-		if (var2 == 0)
+		if (nombre2 != 0)
 		{
-			resultat = var1 / var2;
+			resultat = (float)nombre1 / nombre2;
+			printf("%d %c %d = %.2f\n", nombre1, operateur, nombre2, resultat);
 		}
 		else
 		{
-			printf("On ne peut pas diviser par 0.\n")
+			printf("On ne peut pas diviser par 0.\n");
 		}
 		
 	}
-	else if (choix == '%')
+	else if (operateur == '%')
 	{
 		printf("Modulo\n");
-		if (var2 == 0)
+		if (nombre2 != 0)
 		{
-			resultat = var1 % var2;
+			resultat = nombre1 % nombre2;
+			printf("%d %c %d = %.2f\n", nombre1, operateur, nombre2, resultat);
 		}
 		else
 		{
-			printf("On ne peut pas diviser par 0.\n")
+			printf("On ne peut pas diviser par 0.\n");
 		}
 
 	}
